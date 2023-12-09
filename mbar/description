@@ -1,2 +1,5 @@
-anti-rootkit tool (root-kits being malware that hide system resources, files, and potentially policy settings, probably dont need it but its here)
+anti-rootkit tool 
+(root-kits being malware that hides system resources, files, and potentially policy settings, probably dont need it but its here)
+
+Run exe at the beginning if you want to use, takes a while to scan through
 run exe
