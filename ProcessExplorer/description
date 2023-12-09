@@ -1,0 +1,12 @@
+Process Explorer can be used to investigate a running process from handles to dlls loaded.
+
+Shows computer ussage, PID, Description, Licence, handles, threads, DLLs, and what subprogram every program runs
+-Strings of process
+-Security settings
+-Internet connections
+-path/location
+-variables
+-System jobs
+  
+  
+  
