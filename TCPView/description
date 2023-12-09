@@ -1,0 +1,23 @@
+view all network activity/ports from computer process
+  tcpview for UI
+
+  shows 
+  -Process name
+  -process Id
+  -process internet protocol
+  -What the port is doing
+  -Local address
+  -Local port
+  -Remote adress
+  -Remote port
+  -System name
+  -sort by ip
+  -close connections
+  -kill processes
+  -path
+  -version
+  -sent packet
+  -recived packets
+  -sent bytes
+  -recived bytes
+  
