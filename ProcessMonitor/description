@@ -1,0 +1,15 @@
+used to monitor file system / registry activity on a machine. 
+It logs all access to the file system / registry by all processes on the machine (can be filtered)
+
+  shows
+  -process name
+  -PID
+  -Path
+  -System operations
+  -program sub-process
+  -process description/stack
+  -jump to file location
+
+
+Broad tool, much easier to use than processExplorer
+  
