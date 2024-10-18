@@ -1,0 +1,1 @@
+foreach ($account in Get-WmiObject -Class Win32_UserAccount -Namespace "root\cimv2" -Filter "LocalAccount='$True'" -ComputerName . -ErrorAction Stop) {net user $account.Name/logonpasswordchg:yes}
