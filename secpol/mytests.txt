@@ -1,0 +1,11 @@
+auditpol /get /category:*
+gpupdate /force
+auditpol /set /subcategory:"Audit Policy Change" /success:enable /failure:enable
+
+secedit.exe /configure /db %windir%\security\local.sdb /cfg "C:\Users\Miskym\Downloads\college\cyberpatriot\secpol\policy.inf"
+this one works
+
+secedit.exe /configure /db %windir%\security\secedit.sdb /cfg "C:\Users\Miskym\Downloads\college\cyberpatriot\secpol\policy.inf" /overwrite
+probably better
+
+secpol store in windir%\security\secedit.sdb

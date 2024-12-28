@@ -1,0 +1,103 @@
+Policy	Security Setting
+Accounts: Administrator account status	Disabled
+Accounts: Block Microsoft accounts	Users can't add or log on with Microsoft accounts
+Accounts: Guest account status	Disabled
+Accounts: Limit local account use of blank passwords to console logon only	Enabled
+Accounts: Rename administrator account	Administrator
+Accounts: Rename guest account	Guest
+Audit: Audit the access of global system objects	Disabled
+Audit: Audit the use of Backup and Restore privilege	Disabled
+Audit: Force audit policy subcategory settings (Windows Vista or later) to override audit policy category settings	Enabled
+Audit: Shut down system immediately if unable to log security audits	Enabled
+DCOM: Machine Access Restrictions in Security Descriptor Definition Language (SDDL) syntax	O:BAG:BAD:(D;;CCLC;;;WD)(A;;CCDC;;;WD)(A;;CCDC;;;S-1-15-2-1)(A;;CCDC;;;S-1-15-3-1024-2405443489-874036122-4286035555-1823921565-1746547431-2453885448-3625952902-991631256)(A;;CCDCLC;;;S-1-5-32-559)(A;;CCDCLC;;;S-1-5-32-562)(A;;CCDC;;;S-1-5-7)
+DCOM: Machine Launch Restrictions in Security Descriptor Definition Language (SDDL) syntax	O:BAG:BAD:(D;;CCLCRP;;;WD)(A;;CCDCSW;;;WD)(A;;CCDCSW;;;S-1-15-2-1)(A;;CCDCSW;;;S-1-15-3-1024-2405443489-874036122-4286035555-1823921565-1746547431-2453885448-3625952902-991631256)(A;;CCDCLCSWRP;;;BA)(A;;CCDCLCSWRP;;;S-1-5-32-559)(A;;CCDCLCSWRP;;;S-1-5-32-562)
+Devices: Allow undock without having to log on	Disabled
+Devices: Allowed to format and eject removable media	Administrators
+Devices: Prevent users from installing printer drivers	Enabled
+Devices: Restrict CD-ROM access to locally logged-on user only	Enabled
+Devices: Restrict floppy access to locally logged-on user only	Enabled
+Domain controller: Allow computer account re-use during domain join	Not Defined
+Domain controller: Allow server operators to schedule tasks	Not Defined
+Domain controller: Allow vulnerable Netlogon secure channel connections	Not Defined
+Domain controller: LDAP server channel binding token requirements	Always
+Domain controller: LDAP server signing requirements	Require signing
+Domain controller: Refuse machine account password changes	Not Defined
+Domain member: Digitally encrypt or sign secure channel data (always)	Enabled
+Domain member: Digitally encrypt secure channel data (when possible)	Enabled
+Domain member: Digitally sign secure channel data (when possible)	Enabled
+Domain member: Disable machine account password changes	Disabled
+Domain member: Maximum machine account password age	30 days
+Domain member: Require strong (Windows 2000 or later) session key	Enabled
+Interactive logon: Display user information when the session is locked	Do not display user information
+Interactive logon: Do not require CTRL+ALT+DEL	Disabled
+Interactive logon: Don't display last signed-in	Enabled
+Interactive logon: Don't display username at sign-in	Enabled
+Interactive logon: Machine account lockout threshold	10 invalid logon attempts
+Interactive logon: Machine inactivity limit	900 seconds
+Interactive logon: Message text for users attempting to log on	
+Interactive logon: Message title for users attempting to log on	
+Interactive logon: Number of previous logons to cache (in case domain controller is not available)	10 logons
+Interactive logon: Prompt user to change password before expiration	14 days
+Interactive logon: Require Domain Controller authentication to unlock workstation	Disabled
+Interactive logon: Require Windows Hello for Business or smart card	Disabled
+Interactive logon: Smart card removal behavior	Lock Workstation
+Microsoft network client: Digitally sign communications (always)	Enabled
+Microsoft network client: Digitally sign communications (if server agrees)	Enabled
+Microsoft network client: Send unencrypted password to third-party SMB servers	Disabled
+Microsoft network server: Amount of idle time required before suspending session	15 minutes
+Microsoft network server: Attempt S4U2Self to obtain claim information	Enabled
+Microsoft network server: Digitally sign communications (always)	Enabled
+Microsoft network server: Digitally sign communications (if client agrees)	Enabled
+Microsoft network server: Disconnect clients when logon hours expire	Enabled
+Microsoft network server: Server SPN target name validation level	Accept if provided by client
+Network access: Allow anonymous SID/Name translation	Disabled
+Network access: Do not allow anonymous enumeration of SAM accounts	Enabled
+Network access: Do not allow anonymous enumeration of SAM accounts and shares	Enabled
+Network access: Do not allow storage of passwords and credentials for network authentication	Enabled
+Network access: Let Everyone permissions apply to anonymous users	Disabled
+Network access: Named Pipes that can be accessed anonymously	
+Network access: Remotely accessible registry paths	
+Network access: Remotely accessible registry paths and sub-paths	
+Network access: Restrict anonymous access to Named Pipes and Shares	Enabled
+Network access: Restrict clients allowed to make remote calls to SAM	Not Defined
+Network access: Shares that can be accessed anonymously	Not Defined
+Network access: Sharing and security model for local accounts	Classic - local users authenticate as themselves
+Network security: Allow Local System to use computer identity for NTLM	Enabled
+Network security: Allow LocalSystem NULL session fallback	Disabled
+Network security: Allow PKU2U authentication requests to this computer to use online identities.
+
+	Disabled
+Network security: Configure encryption types allowed for Kerberos	RC4_HMAC_MD5,AES128_HMAC_SHA1,AES256_HMAC_SHA1,Future encryption types
+Network security: Do not store LAN Manager hash value on next password change	Enabled
+Network security: Force logoff when logon hours expire	Disabled
+Network security: LAN Manager authentication level	Send NTLMv2 response only. Refuse LM & NTLM
+Network security: LDAP client signing requirements	Negotiate signing
+Network security: Minimum session security for NTLM SSP based (including secure RPC) clients	Require NTLMv2 session security,Require 128-bit encryption
+Network security: Minimum session security for NTLM SSP based (including secure RPC) servers	Require NTLMv2 session security,Require 128-bit encryption
+Network security: Restrict NTLM: Add remote server exceptions for NTLM authentication	Not Defined
+Network security: Restrict NTLM: Add server exceptions in this domain	Not Defined
+Network security: Restrict NTLM: Audit Incoming NTLM Traffic	Enable auditing for all accounts
+Network security: Restrict NTLM: Audit NTLM authentication in this domain	Enable all
+Network security: Restrict NTLM: Incoming NTLM traffic	Deny all accounts
+Network security: Restrict NTLM: NTLM authentication in this domain	Deny all
+Network security: Restrict NTLM: Outgoing NTLM traffic to remote servers	Deny all
+Recovery console: Allow automatic administrative logon	Disabled
+Recovery console: Allow floppy copy and access to all drives and all folders	Disabled
+Shutdown: Allow system to be shut down without having to log on	Disabled
+Shutdown: Clear virtual memory pagefile	Disabled
+System cryptography: Force strong key protection for user keys stored on the computer	User must enter a password each time they use a key
+System cryptography: Use FIPS compliant algorithms for encryption, hashing, and signing	Disabled
+System objects: Require case insensitivity for non-Windows subsystems	Enabled
+System objects: Strengthen default permissions of internal system objects (e.g. Symbolic Links)	Enabled
+System settings: Optional subsystems	
+System settings: Use Certificate Rules on Windows Executables for Software Restriction Policies	Disabled
+User Account Control: Admin Approval Mode for the Built-in Administrator account	Enabled
+User Account Control: Allow UIAccess applications to prompt for elevation without using the secure desktop	Disabled
+User Account Control: Behavior of the elevation prompt for administrators in Admin Approval Mode	Prompt for consent on the secure desktop
+User Account Control: Behavior of the elevation prompt for standard users	Automatically deny elevation requests
+User Account Control: Detect application installations and prompt for elevation	Enabled
+User Account Control: Only elevate executables that are signed and validated	Disabled
+User Account Control: Only elevate UIAccess applications that are installed in secure locations	Enabled
+User Account Control: Run all administrators in Admin Approval Mode	Enabled
+User Account Control: Switch to the secure desktop when prompting for elevation	Enabled
+User Account Control: Virtualize file and registry write failures to per-user locations	Enabled
