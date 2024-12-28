@@ -1,3 +1,10 @@
+::Group POLICY
+::reg add
+
+::IMPORT SECURITY Policies
+secedit.exe /configure /db %windir%\security\secedit.sdb /cfg "C:\Users\Rudolph\Desktop\cyberpat\secpol.inf" /overwrite :: make sure location is accurate
+pause
+
 ::LOCAL POLICY SECURITY OPTIONS
 net user Administrator /active:no
 net user Guest /active:no
@@ -5,22 +12,19 @@ reg add "HKLM\Software\Microsoft\Windows NT\CurrentVersion\Winlogon" /v Allocate
 net user /logonpasswordchg:yes
 powershell -File windows.ps1
 
-pause
-
 ::PASSWORD POLICY
-net accounts /forcelogoff:900
-net accounts /minpwage:10
-net accounts /maxpwage:90   
+
+net accounts /maxpwage:90
+net accounts /minpwage:10 
 net accounts /minpwlen:8    
 net accounts /uniquepw:3   
 net accounts /lockoutthreshold:5   
 net accounts /lockoutwindow:30
+net accounts /forcelogoff:900
 secpol
 Add-Type -AssemblyName PresentationFramework
-[System.Windows.MessageBox]::Show('Please navigate to Account Policies > Password Policy and enable "Password must meet complexity requirements".')
+[System.Windows.MessageBox]Show('Please navigate to AuditPolicy > and Enable"All".')
 
-
-pause
 
 
 ::AUDIT POLICY
@@ -36,6 +40,7 @@ auditpol /set /subcategory:"Logoff" /success:enable /failure:enable
 auditpol /set /subcategory:"Account Lockout" /success:enable /failure:enable
 auditpol /set /subcategory:"IPsec Main Mode" /success:enable /failure:enable
 auditpol /set /subcategory:"IPsec Quick Mode" /success:enable /failure:enable
+auditpol /set /subcategory:"IPsec Extended Mode" /success:enable /failure:enable
 auditpol /set /subcategory:"Special Logon" /success:enable /failure:enable
 auditpol /set /subcategory:"Other Logon/Logoff Events" /success:enable /failure:enable
 auditpol /set /subcategory:"Network Policy Server" /success:enable /failure:enable
@@ -51,6 +56,7 @@ auditpol /set /subcategory:"Certification Services" /success:enable /failure:ena
 auditpol /set /subcategory:"Application Generated" /success:enable /failure:enable
 auditpol /set /subcategory:"Handle Manipulation" /success:enable /failure:enable
 auditpol /set /subcategory:"File Share" /success:enable /failure:enable
+auditpol /set /subcategory:"Filtering Platform Connection" /success:enable /failure:enable
 auditpol /set /subcategory:"Filtering Platform Packet Drop" /success:enable /failure:enable
 auditpol /set /subcategory:"Other Object Access Events" /success:enable /failure:enable
 auditpol /set /subcategory:"Detailed File Share" /success:enable /failure:enable
@@ -94,7 +100,14 @@ auditpol /set /subcategory:"Detailed Directory Service Replication" /success:ena
 
 :: Account Logon
 auditpol /set /category:"Account Logon" /success:enable /failure:enable
+auditpol /set /subcategory:"Kerberos Service Ticket Operations" /success:enable /failure:enable
+auditpol /set /subcategory:"Other Account Logon Events" /success:enable /failure:enable
+auditpol /set /subcategory:"Kerberos Authentication Service" /success:enable /failure:enable
+auditpol /set /subcategory:"Credential Validation" /success:enable /failure:enable
 
+::pol
+auditpol /set /option:CrashOnAuditFail /value:enable
+auditpol /set /option:FullPrivilegeAuditing /value:enable
 
 pause
 
@@ -111,7 +124,7 @@ ftype jsefile="%SystemRoot%\system32\NOTEPAD.EXE" "%1"
 ftype vbefile="%SystemRoot%\system32\NOTEPAD.EXE" "%1"
 ftype vbsfile="%SystemRoot%\system32\NOTEPAD.EXE" "%1"
 
-::Windows Defender
+::Windows Defender -- exand?
 sc start WinDefend
 setx /M MP_FORCE_USE_SANDBOX 1
 powershell.exe Set-MpPreference -PUAProtection enable
@@ -240,7 +253,7 @@ reg add "HKLM\SYSTEM\CurrentControlSet\Control\Lsa" /v SCENoApplyLegacyAuditPoli
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\PowerShell\ModuleLogging" /v EnableModuleLogging /t REG_DWORD /d 1 /f
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\PowerShell\ScriptBlockLogging" /v EnableScriptBlockLogging /t REG_DWORD /d 1 /f
 
-::windows detailed logging
+::windows detailed logging - can probably delete
 Auditpol /set /subcategory:"Security Group Management" /success:enable /failure:enable
 Auditpol /set /subcategory:"Process Creation" /success:enable /failure:enable
 Auditpol /set /subcategory:"Logoff" /success:enable /failure:disable
@@ -299,3 +312,12 @@ reg add "HKLM\SOFTWARE\Policies\Google\Chrome" /v "TLS13HardeningForLocalAnchors
 reg add "HKLM\SOFTWARE\Policies\Google\Chrome" /v "VideoCaptureAllowed" /t REG_DWORD /d 0 /f
 
 pause
+
+
+::services to remove?
+
+::group policies to add? haptics, autoupdate?
+
+:: features to disable?
+
+::
